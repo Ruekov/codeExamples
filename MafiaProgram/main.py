@@ -86,9 +86,25 @@ def main():
 
 	LuigisOrg.memberReleased(member1)
 	
-	print '_________LIST OF ACTIVE MEMBERS'	
+	print '_________LIST OF ACTIVE MEMBERS'
 	
 	LuigisOrg.actualMembers()
+	
+	print '_________FBI WORKS HARD_____'+member0.getMemberName()+'_____WENT TO JAIL'
+
+	LuigisOrg.memberArrested(member0)
+	
+	print 'Actual Boss:'+LuigisOrg.highestMember(member1,member0).getMemberName()
+	
+	print 'Actual Boss:'+LuigisOrg.highestMember(member0,member1).getMemberName()
+	
+	print '_________LAWYERS WORK HARDER_____'+member0.getMemberName()+'_____IS NOW FREE'
+
+	LuigisOrg.memberReleased(member0)
+	
+	print 'Actual Boss:'+LuigisOrg.highestMember(member0,member1).getMemberName()
+	
+	print 'Actual Boss:'+LuigisOrg.highestMember(member1,member0).getMemberName()
 	
 	return 0
 

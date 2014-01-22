@@ -1,0 +1,45 @@
+\documentclass[a4paper]{letter}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[spanish]{babel}
+
+\usepackage{hyperref}
+
+\hypersetup{
+    pdfauthor={Guillem Rueda Cebollero},
+    pdftitle={Apuntes y consideraciones de MafiaProgram}
+}
+
+
+
+\begin{document}
+ \pagestyle{empty} 
+
+Apuntes y consideraciones:\\
+
+\begin{itemize}
+\item Cuándo un miembro entra o sale de la prisión no es eliminado de la jerarquía, sólo el valor de actividad de su clase pasará a ser Cierta o Falsa.
+\item Se guarda el estado del mafioso en su clase (\emph{mafiaMember}). No se deja de pertenecer a la jerarquía por ir a la cárcel, sólo se deja de actuar en ella.
+\item La función \emph{highestMember} dados dos objetos \emph{mafiaMember} devuelve el que tenga el rango superior dentro la jerarquía.
+\item En \emph{main.py} se prueba las distintas clases. No se hace un test de stress. En caso de stress, y disponibilidad de espacio hará falta analizar que consultas son más frecuentes y actuar en consecuencia.\\ 
+\end{itemize}
+
+Acerca la clase \textbf{member}:\\
+
+\begin{itemize}
+\item La clase es abstracta para poder dar cabida a posibles tipos de miembros distintos (policía, políticos,infiltrados, etc.).
+\item Por ahora el valor clave es el nombre del miembro. Debería ser elegido otro valor, un valor único (número de ficha criminal, por ejemplo).
+\item Pueden ser atorgados otros atributos a la classe. Sólo se han otorgado los imprescindibles (nombre y actividad).\\
+\end{itemize}
+
+Acerca la clase \textbf{organization}:\\
+
+\begin{itemize}
+\item La clase es virtual porqué tampoco sabemos que implementación tendrá (cada organización es distinta).
+\item En el caso de mafia, se trata de una cola dónde los miembros veteranos tienen más poder que los nuevos.
+\item Los veteranos seimpre estarán con los números más cercanos al indice 0.
+\item Si un miembro fallece, se borrará de la jerarquía.\\
+\end{itemize}
+
+\end{document}

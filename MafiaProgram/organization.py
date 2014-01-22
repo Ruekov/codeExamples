@@ -97,3 +97,18 @@ class organizationMafia(organization):
 		Removes a Mafia member object
 		"""
 		return self._listOfMembers.remove(mafiaMember)
+		
+	def highestMember(self, mafiaMember1, mafiaMember2):
+		""" 
+		Returns the highest in the hierarchy Mafia member object
+		"""
+	
+		for item in enumerate (self._listOfMembers):
+			if mafiaMember1.getMemberName() == item[1].getMemberName() and item[1].isActive():
+				return mafiaMember1
+			if mafiaMember2.getMemberName() == item[1].getMemberName() and item[1].isActive():
+				return mafiaMember2
+		
+		
+		
+		
